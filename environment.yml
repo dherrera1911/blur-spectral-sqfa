@@ -1,0 +1,14 @@
+name: spectral-observer
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.11
+  - pip
+  - pooch
+  - pytorch
+  - numpy
+  - matplotlib
+  - pip:
+    - sqfa
