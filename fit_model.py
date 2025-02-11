@@ -64,7 +64,9 @@ loss_np = loss.detach().cpu().numpy()
 time_np = training_time.detach().cpu().numpy()
 
 # Save as CSV
-np.savetxt(f'./results/filters_noise-{NOISE}_pca-{PCA_INIT}.csv', filters, delimiter=',')
-np.savetxt(f'./results/loss_noise-{NOISE}_pca-{PCA_INIT}.csv', loss_np, delimiter=',')
-np.savetxt(f'./results/time_noise-{NOISE}_pca-{PCA_INIT}.csv', time_np, delimiter=',')
+# Ensure the directory exists
+os.makedirs('results', exist_ok=True)
+np.savetxt(f'./results/filters_noise-{NOISE}_pca-{PCA_INIT}_npairs-{N_PAIRS}.csv', filters, delimiter=',')
+np.savetxt(f'./results/loss_noise-{NOISE}_pca-{PCA_INIT}_npairs-{N_PAIRS}.csv', loss_np, delimiter=',')
+np.savetxt(f'./results/time_noise-{NOISE}_pca-{PCA_INIT}_npairs-{N_PAIRS}.csv', time_np, delimiter=',')
 
