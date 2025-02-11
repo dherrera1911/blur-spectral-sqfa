@@ -14,7 +14,7 @@ else:
     torch.set_default_dtype(torch.float32)
     torch.set_default_device('cpu')
 
-N_PAIRS = 2
+N_PAIRS = 4
 NOISE = 0.005
 PCA_INIT = True
 
@@ -22,8 +22,8 @@ PCA_INIT = True
 covariances = load_covariances()
 
 # Remove some classes
-covariances = covariances[30:-30]
-covariances = covariances[:,8:-8]
+covariances = covariances[10:-10]
+covariances = covariances[:,2:-2]
 
 # Stretch the array of covariances to be shaped n_classes, n_blocks, block_dim, block_dim
 n_classes1, n_classes2, n_blocks, block_dim, _ = covariances.shape
